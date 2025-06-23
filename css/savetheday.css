@@ -375,9 +375,9 @@ body::after {
 .imagen-final {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 
-  /* Aplicar la misma máscara del slider
+  /* Aplicar la misma máscara del slider */
   -webkit-mask-image: url('../images/mask-nubosa3.png');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
@@ -388,7 +388,7 @@ body::after {
   mask-repeat: no-repeat;
   mask-position: center;
 
-  transition: opacity 1s ease-in-out; */
+  transition: opacity 1s ease-in-out;
   opacity: 1;
 }
 
