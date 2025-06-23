@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Briggitte & José Martin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mea+Culpa&display=swap" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body class="fondo-principal">
+
+  <!-- Audio que se activa al hacer clic o tocar en móviles -->
+ <!-- AUDIO oculto por defecto -->
+<audio id="background-audio" loop>
+  <source src="music/Ed Sheeran - Thinking Out Loud.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<!-- BOTÓN FLOTANTE PARA ACTIVAR LA MÚSICA -->
+<button id="activar-musica"
+  style="
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fcd5ce;
+    color: #8b5e66;
+    padding: 12px 20px;
+    border-radius: 9999px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    border: none;
+  ">
+  Activar música 🎵
+</button>
+
+
+
+  <!-- Contenido principal -->
+  <div class="flex flex-col justify-center items-center text-center p-4 h-screen">
+    <div class="nombres">
+      <span>Briggitte</span>
+      <span>&</span>
+      <span>Martin</span>
+    </div>
+
+    <div class="texto-invitacion">
+      <p>Estamos felices de invitarte a<br><strong>NUESTRA BODA</strong></p>
+      <p class="mt-2">¡Nos encantaría que nos acompañes en este día tan único!</p>
+    </div>
+
+    <a href="savetheday.html" target="_blank" class="relative">
+      <img src="images/sobre.png" alt="Sobre" />
+    </a>
+  </div>
+
+  <!-- Script para activar audio en móviles -->
+  <script src="js/index.js"></script>
+</body>
+</html>
