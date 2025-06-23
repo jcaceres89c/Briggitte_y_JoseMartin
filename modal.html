@@ -1,12 +1,59 @@
-<!-- modal/modal.html -->
-<div id="modal-nombre" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-sm">
-    <h2 class="text-lg font-semibold mb-4 text-pink-700">Confirma tu asistencia</h2>
-    <input type="text" id="nombre-input" placeholder="Ingresa tu nombre completo" class="border p-2 w-full rounded mb-4" />
-    <div class="flex justify-end gap-2">
-      <button id="cancelar-modal" class="bg-gray-300 text-gray-800 px-4 py-2 rounded">Cancelar</button>
-      <button id="enviar-nombre" class="bg-pink-500 text-white px-4 py-2 rounded">Enviar</button>
-    </div>
-    <p id="mensaje-error" class="text-red-600 text-sm mt-2 hidden">Nombre no encontrado. Intenta nuevamente.</p>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirmación</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body style="font-family:sans-serif; padding:1rem;">
+  <h2>Ingresa tu nombre:</h2>
+  <input type="text" id="nombreInput" style="width:100%; padding:0.5rem;" />
+  <button onclick="validarNombre()">Verificar</button>
+  <div id="resultado" style="margin-top:1rem;"></div>
+
+  <script>
+    function normalizarTexto(texto) {
+      return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    async function validarNombre() {
+      const nombreInput = document.getElementById("nombreInput").value.trim();
+      const nombreNormalizado = normalizarTexto(nombreInput);
+      const resultado = document.getElementById("resultado");
+
+      const response = await fetch("invitados.csv");
+      const csvText = await response.text();
+      const data = Papa.parse(csvText, { header: true }).data;
+
+      const invitado = data.find(row => normalizarTexto(row.Nombre || "") === nombreNormalizado);
+
+      if (invitado) {
+        const nombreCodificado = encodeURIComponent(invitado.Nombre);
+        const pases = parseInt(invitado.Pases);
+
+        // URLs de formularios por cantidad de pases
+        const formularios = {
+          1: "https://docs.google.com/forms/d/e/1FAIpQLSdNM8J9WxjLZHbiyffD-gQ1fuIAnA7ah4iffXjbokj7T7J2aQ/viewform?usp=pp_url&entry.1079611635=",
+          2: "https://docs.google.com/forms/d/e/FORM_ID_2/viewform?usp=pp_url&entry.1079611635=",
+          3: "https://docs.google.com/forms/d/e/FORM_ID_3/viewform?usp=pp_url&entry.1079611635=",
+          4: "https://docs.google.com/forms/d/e/FORM_ID_4/viewform?usp=pp_url&entry.1079611635="
+        };
+
+        const url = formularios[pases];
+
+        if (url) {
+          window.location.href = url + nombreCodificado;
+        } else {
+          resultado.textContent = `No se encontró un formulario para ${pases} pases.`;
+        }
+
+      } else {
+        resultado.textContent = "Nombre no encontrado. Verifica que esté bien escrito.";
+      }
+    }
+  </script>
+</body>
+</html>
