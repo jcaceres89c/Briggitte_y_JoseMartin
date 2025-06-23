@@ -24,7 +24,7 @@
       const nombreNormalizado = normalizarTexto(nombreInput);
       const resultado = document.getElementById("resultado");
 
-      const response = await fetch("invitados.csv");
+      const response = await fetch("/invitados/invitados.csv");
       const csvText = await response.text();
       const data = Papa.parse(csvText, { header: true }).data;
 
