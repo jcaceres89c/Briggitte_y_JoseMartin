@@ -375,7 +375,7 @@ body::after {
 .imagen-final {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 
   /* Aplicar la misma máscara del slider
   -webkit-mask-image: url('../images/mask-nubosa3.png');
