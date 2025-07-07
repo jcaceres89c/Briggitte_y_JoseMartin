@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirmación de asistencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/validacion_invitado.css" />
+</head>
+
+<body class="bg-white text-gray-800 flex flex-col items-center justify-center min-h-screen p-4">
+  <!-- Formulario principal -->
+  <form id="confirm-form" class="w-full max-w-md bg-gray-100 p-6 rounded shadow">
+    <label for="name-input" class="block text-lg font-semibold mb-2">
+      Escribe tu Nombre y Apellido:
+    </label>
+
+    <input
+      type="text"
+      id="name-input"
+      class="w-full p-2 border border-gray-300 rounded mb-4"
+      placeholder="Ej: Jorge Caceres"
+    />
+
+    <p id="error-message" class="text-red-600 text-sm mb-4"></p>
+
+    <!-- Sugerencias dinámicas -->
+    <div id="sugerencias" class="mt-4 space-y-2 w-full pr-2"></div>
+
+    <button
+      type="submit"
+      class="w-full text-white py-2 rounded transition"
+      style="background-color:#8c6117;"
+      onmouseover="this.style.backgroundColor='#724e12';"
+    >
+      Ir a Confirmación
+    </button>
+  </form>
+
+  <!-- Script que valida el CSV y redirige -->
+  <script src="/js/validacion.js"></script>
+</body>
+</html>
