@@ -1,27 +1,79 @@
-/* index.css */
-
-.hero-text {
-  font-size: 2rem;
-  color: #8b5e66;
+@font-face {
+  font-family: 'Brittany Signature';
+  src: url('../fonts/BrittanySignatureRegular/BrittanySignatureRegular.woff2') format('woff2'),
+       url('../fonts/BrittanySignatureRegular/BrittanySignatureRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.nombre {
-  font-size: 4rem;
-  font-family: 'Brittany Signature', cursive;
+html, body {
+  background-color: #efe1d6;
   color: #b48e12;
+  font-family: 'Brittany Signature', cursive;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-.confirm-button {
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #b22222;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1.25rem;
-  transition: background-color 0.3s ease;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
 }
 
-.confirm-button:hover {
-  background-color: #8b1a1a;
+.nombres span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nombres span:nth-child(1),
+.nombres span:nth-child(3) {
+  font-size: clamp(48px, 10vw, 120px);
+  color: #b48e12; /* color dorado para Briggitte y José Martin */
+}
+
+.nombres span:nth-child(2) {
+  font-size: clamp(32px, 7vw, 120px);
+  color: #5a3e36;
+}
+
+.texto-invitacion {
+  font-family: 'Dancing Script', cursive;
+  color: #8b5e66;
+  font-size: clamp(20px, 8vw, 30px);
+  max-width: 90%;
+  margin: 1rem 0;
+}
+
+a img {
+  width: 15vw;
+  max-width: 150px;
+  min-width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-height: 700px), (max-width: 400px) {
+  .countdown-timer {
+    font-size: clamp(24px, 5vw, 48px) !important;
+  }
+  .texto-invitacion {
+    font-size: clamp(14px, 6vw, 20px) !important;
+  }
+  .nombres span:nth-child(1),
+  .nombres span:nth-child(3) {
+    font-size: clamp(24px, 8vw, 64px) !important;
+  }
+  .nombres span:nth-child(2) {
+    font-size: clamp(18px, 6vw, 48px) !important;
+  }
+  a img {
+    width: 10vw !important;
+    max-width: 100px !important;
+  }
 }
