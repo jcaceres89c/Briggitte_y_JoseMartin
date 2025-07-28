@@ -9,44 +9,35 @@
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-  <audio autoplay loop>
+  <!-- Botón para reproducir música si el navegador lo requiere -->
+  <button id="playMusicBtn" class="boton-musica fixed bottom-4 right-4 bg-white p-2 rounded-full shadow-lg z-50">
+    🎵
+  </button>
+
+  <!-- Reproductor de audio oculto -->
+  <audio id="bgMusic" loop>
     <source src="music/Ed Sheeran - Thinking Out Loud.mp3" type="audio/mpeg" />
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <script>
-    const myAudio = new Audio("music/Ed Sheeran - Thinking Out Loud.mp3");
-    myAudio.loop = true;
-    function iniciarAudio() {
-      myAudio.play().catch(e => console.log("Error al intentar reproducir el audio:", e));
-      document.removeEventListener("click", iniciarAudio);
-      document.removeEventListener("touchstart", iniciarAudio);
-    }
-    document.addEventListener("click", iniciarAudio);
-    document.addEventListener("touchstart", iniciarAudio);
-  </script>
-
-  <div class="nombres">
+  <div class="nombres text-center text-4xl mt-10 font-dancing text-pink-600">
     <span>Briggitte</span>
-    <span>&</span>
+    <span class="mx-2">&</span>
     <span>José Martin</span>
   </div>
 
-  <div class="texto-invitacion">
+  <div class="texto-invitacion text-center mt-6 px-4 text-lg text-gray-700">
     <p>Estamos felices de invitarte a<br><strong>NUESTRA BODA</strong></p>
-   <!-- <div id="countdown" class="mt-2">
-      <div class="countdown-timer">
-        <span id="days">00</span>d :
-        <span id="hours">00</span>h :
-        <span id="minutes">00</span>m :
-        <span id="seconds">00</span>s
-      </div>
-    </div> -->
     <p class="mt-2">¡Nos encantaría que nos acompañes en este día tan único!</p>
   </div>
 
-  <a href="savetheday.html" target="_blank" class="relative">
-    <img src="images/sobre.png" alt="Sobre" />
-  </a>
+  <div class="flex justify-center mt-10">
+    <a href="savetheday.html" target="_blank" class="relative">
+      <img src="images/sobre.png" alt="Sobre" class="w-32 h-auto" />
+    </a>
+  </div>
+
+  <!-- JavaScript externo -->
+  <script src="js/playmusic.js"></script>
 </body>
 </html>
