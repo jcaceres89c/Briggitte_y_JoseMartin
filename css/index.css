@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+html, body {
+  overflow: hidden;
+  position: relative;
+}
+
 .fondo-boda {
   background-color: #efe1d6;
   display: flex;

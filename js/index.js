@@ -55,8 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const size = Math.floor(Math.random() * 100) + 50; // entre 50px y 150px
     img.style.width = `${size}px`;
-    img.style.top = `${Math.random() * 100}vh`;
-    img.style.left = `${Math.random() * 100}vw`;
+    const padding = 100; // margen para no salirte
+img.style.left = `${Math.random() * (window.innerWidth - padding)}px`;
+img.style.top = `${Math.random() * (window.innerHeight - padding)}px`;
     const anim = animaciones[Math.floor(Math.random() * animaciones.length)];
     const duracion = Math.random() * 10 + 5; // entre 5s y 15s
 
