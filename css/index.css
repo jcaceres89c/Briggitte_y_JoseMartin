@@ -106,6 +106,7 @@ html, body {
   height: 40px;
   opacity: 0.8;
   animation: floatUp linear forwards;
+  animation-duration: 20s; /* 👈 ESTA LÍNEA CONTROLA LA VELOCIDAD */
 }
 
 @keyframes floatUp {

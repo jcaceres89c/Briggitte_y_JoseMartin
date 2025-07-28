@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Y seguir generando cada cierto tiempo
     setInterval(() => {
       createFloatingImage();
-    }, 800);
+    }, 1500);
   });
 
 
