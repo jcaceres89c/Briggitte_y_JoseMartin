@@ -86,7 +86,7 @@
   /*fotos aleatorias*/
  .foto-aleatoria {
   position: absolute;
-  z-index: -1; /* Importante: detrás del texto */
+  z-index: 0; /* Importante: detrás del texto */
   opacity: 0.8;
   pointer-events: none;
 }
