@@ -6,37 +6,31 @@
   font-style: normal;
 }
 
-/* Estilos generales base */
-html, body {
+.fondo-boda {
   background-color: #efe1d6;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Estilo para el cuerpo */
-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 1rem;
-  font-family: 'Brittany Signature', cursive; /* puede ser base, pero lo sobrescribiremos abajo si es necesario */
-  color: #5a3e36; /* color general más neutro */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Brittany Signature', cursive;
+  color: #5a3e36;
 }
 
-/* Estilo explícito para los nombres */
 .nombres {
   font-size: clamp(48px, 10vw, 120px);
-  color: #b48e12; /* color dorado explícito */
-  font-family: 'Brittany Signature', cursive; /* fuente explícita */
+  color: #b48e12;
+  font-family: 'Brittany Signature', cursive;
   white-space: nowrap;
 }
 
-/* Estilo explícito para el texto de invitación */
-.texto-invitacion {
+.texto-invitacion1,
+.texto-invitacion2,
+.texto-invitacion3 {
   font-family: 'Dancing Script', cursive;
   color: #8b5e66;
   font-size: clamp(20px, 8vw, 30px);
@@ -44,36 +38,33 @@ body {
   margin: 1rem 0;
 }
 
-/* Estilo para imagen del sobre */
-a img {
+.imagen-sobre {
   width: 25vw;
   max-width: 250px;
   min-width: 100px;
   height: auto;
   display: block;
- margin: 2rem auto 0;
+  margin: 2rem auto 0;
 }
 
-/* Estilo responsivo */
 @media (max-height: 700px), (max-width: 400px) {
   .nombres {
     font-size: clamp(24px, 8vw, 64px) !important;
   }
 
-  .texto-invitacion {
+  .texto-invitacion1,
+  .texto-invitacion2,
+  .texto-invitacion3 {
     font-size: clamp(14px, 6vw, 20px) !important;
   }
 
-  .countdown-timer {
-    font-size: clamp(24px, 5vw, 48px) !important;
-  }
-
-  a img {
+  .imagen-sobre {
     width: 10vw !important;
     max-width: 100px !important;
   }
 }
-/*estilo musica*/
+
+/* Botón de música */
 .boton-musica {
   position: fixed;
   bottom: 1.5rem;
@@ -92,3 +83,4 @@ a img {
 .boton-musica.active {
   background-color: #8b5e66;
 }
+  
