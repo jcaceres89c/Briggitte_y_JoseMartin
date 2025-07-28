@@ -26,3 +26,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//fotos aleatorias
+document.addEventListener('DOMContentLoaded', () => {
+  const contenedor = document.createElement('div');
+  contenedor.id = 'fotos-aleatorias';
+  document.body.prepend(contenedor);
+
+  const imagenes = [
+    './fotos/fotos1.jpg',
+    './fotos/fotos2.jpg',
+    './fotos/fotos3.jpg',
+    './fotos/fotos4.jpg',
+  ];
+
+  function mostrarImagenAleatoria() {
+    const img = document.createElement('img');
+    img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
+    img.className = 'foto-flotante';
+
+    // Posición aleatoria dentro del viewport
+    img.style.left = `${Math.random() * 90}%`;
+    img.style.top = `${Math.random() * 80 + 10}%`;
+
+    contenedor.appendChild(img);
+
+    // Eliminar después de la animación
+    setTimeout(() => {
+      contenedor.removeChild(img);
+    }, 10000); // mismo tiempo que la animación
+  }
+
+  // Mostrar una imagen cada 5 segundos
+  setInterval(mostrarImagenAleatoria, 5000);
+});
+
+
+

@@ -83,4 +83,41 @@
 .boton-musica.active {
   background-color: #8b5e66;
 }
-  
+  /*fotos aleatorias*/
+  #fotos-aleatorias {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0; /* Detrás de todo */
+}
+
+.foto-flotante {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  animation: flotar 10s linear forwards;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes flotar {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0.8) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10vh) scale(1.2) rotate(360deg);
+  }
+}
