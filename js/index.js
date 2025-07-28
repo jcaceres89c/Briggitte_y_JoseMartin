@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.prepend(contenedor);
 
   const imagenes = [
-    './fotos/fotos1.jpg',
-    './fotos/fotos2.jpg',
-    './fotos/fotos3.jpg',
-    './fotos/fotos4.jpg',
+    './fotos/fotos1.jpeg',
+    './fotos/fotos2.jpeg',
+    './fotos/fotos3.jpeg',
+    './fotos/fotos4.jpeg',
   ];
 
   function mostrarImagenAleatoria() {
