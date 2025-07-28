@@ -87,11 +87,11 @@ img.style.top = `${Math.random() * (window.innerHeight - padding)}px`;
     // Eliminar después de la animación
     setTimeout(() => {
       img.remove();
-    }, duracion * 3000);
+    }, duracion * 2000);
   }
 
   // Llama una imagen cada segundo
-  setInterval(crearImagenAleatoria, 2500);
+  setInterval(crearImagenAleatoria, 2000);
 });
 
 
