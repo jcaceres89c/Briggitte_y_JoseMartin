@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //fotos aleatorias
+ 
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.createElement('div');
   contenedor.id = 'fotos-aleatorias';
@@ -38,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     './fotos/fotos2.jpeg',
     './fotos/fotos3.jpeg',
     './fotos/fotos4.jpeg',
+    './fotos/fotos5.jpeg',
+    './fotos/fotos6.jpeg',
+    './fotos/fotos7.jpeg',
+    './fotos/fotos8.jpeg',
+    // Agrega más si quieres
   ];
 
   function mostrarImagenAleatoria() {
@@ -45,21 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
     img.className = 'foto-flotante';
 
-    // Posición aleatoria dentro del viewport
+    // Posiciones aleatorias dentro del viewport
     img.style.left = `${Math.random() * 90}%`;
-    img.style.top = `${Math.random() * 80 + 10}%`;
+    img.style.top = `${Math.random() * 90}%`;
 
     contenedor.appendChild(img);
 
-    // Eliminar después de la animación
+    // Remover la imagen después de 10s
     setTimeout(() => {
-      contenedor.removeChild(img);
-    }, 10000); // mismo tiempo que la animación
+      img.remove();
+    }, 30000);
   }
 
-  // Mostrar una imagen cada 5 segundos
-  setInterval(mostrarImagenAleatoria, 5000);
-});
+  // Mostrar una imagen inmediatamente
+  mostrarImagenAleatoria();
 
+  // Y seguir mostrando cada 4 segundos
+  setInterval(mostrarImagenAleatoria, 4000);
+});
 
 
