@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Agrega más si quieres
   ];*/
 
-  const container = document.getElementById("floating-images-container");
+  const container = document.getElementById("fotos-aleatorias");
   const images = 
   [
     './fotos/fotos1.jpeg',
