@@ -43,6 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
     './fotos/fotos9.jpeg',
     './fotos/fotos10.jpeg',
     './fotos/fotos11.jpeg',
+    './fotos/fotos12.jpeg',
+    './fotos/fotos13.jpeg',
+    './fotos/fotos14.jpeg',
+    './fotos/fotos15.jpeg',
+    './fotos/fotos16.jpeg',
+    './fotos/fotos17.jpeg',
+    './fotos/fotos18.jpeg',
+    './fotos/fotos19.jpeg',
+    './fotos/fotos20.jpeg',
+    './fotos/fotos21.jpeg',
+    './fotos/fotos22.jpeg',
+    './fotos/fotos23.jpeg',
+    './fotos/fotos24.jpeg',
+    './fotos/fotos25.jpeg',
+    './fotos/fotos26.jpeg',
+    './fotos/fotos27.jpeg',
+    './fotos/fotos28.jpeg',
+    './fotos/fotos29.jpeg',
+    './fotos/fotos30.jpeg',
     // Agrega más si quieres
   ];
 
@@ -72,7 +91,7 @@ img.style.top = `${Math.random() * (window.innerHeight - padding)}px`;
   }
 
   // Llama una imagen cada segundo
-  setInterval(crearImagenAleatoria, 2000);
+  setInterval(crearImagenAleatoria, 2500);
 });
 
 
