@@ -320,6 +320,25 @@ body::after {
 
 /*Regalos Sugeridos*/
 
+.grupo-bcp,
+.grupo-scotiabank {
+  flex: 1 1 45%;          /* Cada uno puede crecer, reducirse, y tiene un ancho base del 45% */
+  max-width: 400px;       /* Evita que se estiren demasiado */
+}
+
+.grupo-cuentas {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap;      /* ❗ Esto mantiene los elementos en una sola línea */
+}
+
+.no-break {
+  white-space: nowrap;    /* Impide que el texto se divida en múltiples líneas */
+}
+
+
+
 .bcp{
  max-width: 600px;           /* Limita el ancho del texto */
   margin: 0 auto;             /* Centra horizontalmente */

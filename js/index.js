@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //fotos aleatorias
  
-document.addEventListener('DOMContentLoaded', () => {
-
+/*
   const imagenes = [
     './fotos/fotos1.jpeg',
     './fotos/fotos2.jpeg',
@@ -63,35 +62,79 @@ document.addEventListener('DOMContentLoaded', () => {
     './fotos/fotos29.jpeg',
     './fotos/fotos30.jpeg',
     // Agrega más si quieres
+  ];*/
+
+  const container = document.getElementById("floating-images-container");
+  const images = 
+  [
+    './fotos/fotos1.jpeg',
+    './fotos/fotos2.jpeg',
+    './fotos/fotos3.jpeg',
+    './fotos/fotos4.jpeg',
+    './fotos/fotos5.jpeg',
+    './fotos/fotos6.jpeg',
+    './fotos/fotos7.jpeg',
+    './fotos/fotos8.jpeg',
+    './fotos/fotos9.jpeg',
+    './fotos/fotos10.jpeg',
+    './fotos/fotos11.jpeg',
+    './fotos/fotos12.jpeg',
+    './fotos/fotos13.jpeg',
+    './fotos/fotos14.jpeg',
+    './fotos/fotos15.jpeg',
+    './fotos/fotos16.jpeg',
+    './fotos/fotos17.jpeg',
+    './fotos/fotos18.jpeg',
+    './fotos/fotos19.jpeg',
+    './fotos/fotos20.jpeg',
+    './fotos/fotos21.jpeg',
+    './fotos/fotos22.jpeg',
+    './fotos/fotos23.jpeg',
+    './fotos/fotos24.jpeg',
+    './fotos/fotos25.jpeg',
+    './fotos/fotos26.jpeg',
+    './fotos/fotos27.jpeg',
+    './fotos/fotos28.jpeg',
+    './fotos/fotos29.jpeg',
+    './fotos/fotos30.jpeg',
   ];
 
-  const animaciones = ['flotar1', 'flotar2', 'flotar3'];
+  function createFloatingImage() {
+    const img = document.createElement("img");
+    img.src = images[Math.floor(Math.random() * images.length)];
+    img.classList.add("floating-image");
 
-  function crearImagenAleatoria() {
-    const img = document.createElement('img');
-    img.src = imagenes[Math.floor(Math.random() * imagenes.length)];
-    img.className = 'foto-aleatoria';
-
-    const size = Math.floor(Math.random() * 100) + 50; // entre 50px y 150px
+    const size = 20 + Math.random() * 40; // tamaño aleatorio
     img.style.width = `${size}px`;
-    const padding = 100; // margen para no salirte
-img.style.left = `${Math.random() * (window.innerWidth - padding)}px`;
-img.style.top = `${Math.random() * (window.innerHeight - padding)}px`;
-    const anim = animaciones[Math.floor(Math.random() * animaciones.length)];
-    const duracion = Math.random() * 10 + 5; // entre 5s y 15s
+    img.style.height = `${size}px`;
 
-    img.style.animation = `${anim} ${duracion}s linear forwards`;
+    const left = Math.random() * 100;
+    img.style.left = `${left}vw`;
 
-    document.body.appendChild(img);
+    const duration = 4 + Math.random() * 4;
+    img.style.animationDuration = `${duration}s`;
 
-    // Eliminar después de la animación
+    container.appendChild(img);
+
+    // Eliminar imagen después de la animación
     setTimeout(() => {
       img.remove();
-    }, duracion * 2000);
+    }, duration * 1000);
   }
 
-  // Llama una imagen cada segundo
-  setInterval(crearImagenAleatoria, 2000);
-});
+  // Generar varias imágenes al entrar a la página
+  window.addEventListener("DOMContentLoaded", () => {
+    for (let i = 0; i < 20; i++) {
+      setTimeout(createFloatingImage, i * 300); // pequeñas demoras para que no aparezcan todas a la vez
+    }
+
+    // Y seguir generando cada cierto tiempo
+    setInterval(() => {
+      createFloatingImage();
+    }, 800);
+  });
+
+
+ 
 
 
