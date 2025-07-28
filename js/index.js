@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Eliminar después de la animación
     setTimeout(() => {
       img.remove();
-    }, duracion * 1000);
+    }, duracion * 3000);
   }
 
   // Llama una imagen cada segundo
-  setInterval(crearImagenAleatoria, 1000);
+  setInterval(crearImagenAleatoria, 2000);
 });
 
 
