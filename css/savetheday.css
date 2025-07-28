@@ -320,6 +320,27 @@ body::after {
 
 /*Regalos Sugeridos*/
 
+.bcp{
+ max-width: 600px;           /* Limita el ancho del texto */
+  margin: 0 auto;             /* Centra horizontalmente */
+  text-align: center;         /* Centra el texto */
+  font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
+  color: #4b3b3b;             /* Color sobrio */
+  font-family: 'Dancing Script', cursive;
+  padding: 1rem;
+  line-height: 1.6;
+}
+.scotiabank{
+ max-width: 600px;           /* Limita el ancho del texto */
+  margin: 0 auto;             /* Centra horizontalmente */
+  text-align: center;         /* Centra el texto */
+  font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
+  color: #4b3b3b;             /* Color sobrio */
+  font-family: 'Dancing Script', cursive;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
 .fondo-regalo {
   position: relative;
   padding: 2rem;
