@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Generar varias imágenes al entrar a la página
   window.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < 20; i++) {
-      setTimeout(createFloatingImage, i * 300); // pequeñas demoras para que no aparezcan todas a la vez
+      setTimeout(createFloatingImage, i * 1500); // pequeñas demoras para que no aparezcan todas a la vez
     }
 
     // Y seguir generando cada cierto tiempo
