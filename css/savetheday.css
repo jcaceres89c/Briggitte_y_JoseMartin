@@ -320,45 +320,47 @@ body::after {
 
 /*Regalos Sugeridos*/
 
-.grupo-bcp,
+/*.grupo-bcp,
 .grupo-scotiabank {
   flex: 1 1 45%;          /* Cada uno puede crecer, reducirse, y tiene un ancho base del 45% */
-  max-width: 400px;       /* Evita que se estiren demasiado */
-}
+/*  max-width: 400px;       /* Evita que se estiren demasiado */
+/*}*/
 
+/*
 .grupo-cuentas {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  flex-wrap: nowrap;      /* ❗ Esto mantiene los elementos en una sola línea */
-}
+ /* flex-wrap: nowrap;      /* ❗ Esto mantiene los elementos en una sola línea */
+/*}*/
 
-.no-break {
+/*.no-break {
   white-space: nowrap;    /* Impide que el texto se divida en múltiples líneas */
-}
+/*}*/
 
 
 
-.bcp{
+/*.bcp{
  max-width: 600px;           /* Limita el ancho del texto */
-  margin: 0 auto;             /* Centra horizontalmente */
-  text-align: center;         /* Centra el texto */
-  font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
-  color: #4b3b3b;             /* Color sobrio */
-  font-family: 'Dancing Script', cursive;
+ /* margin: 0 auto;             /* Centra horizontalmente */
+  /*text-align: center;         /* Centra el texto */
+  /*font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
+  /*color: #4b3b3b;             /* Color sobrio */
+  /*font-family: 'Dancing Script', cursive;
   padding: 1rem;
   line-height: 1.6;
-}
+}*/
+/*
 .scotiabank{
  max-width: 600px;           /* Limita el ancho del texto */
-  margin: 0 auto;             /* Centra horizontalmente */
-  text-align: center;         /* Centra el texto */
-  font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
-  color: #4b3b3b;             /* Color sobrio */
-  font-family: 'Dancing Script', cursive;
+  /*margin: 0 auto;             /* Centra horizontalmente */
+  /*text-align: center;         /* Centra el texto */
+  /*font-size: 1.5rem;        /* Tamaño legible (18px aprox) */
+  /*color: #4b3b3b;             /* Color sobrio */
+  /*font-family: 'Dancing Script', cursive;
   padding: 1rem;
   line-height: 1.6;
-}
+}*/
 
 .fondo-regalo {
   position: relative;
@@ -420,5 +422,24 @@ body::after {
   transition: opacity 1s ease-in-out;
   opacity: 1;
 }
+
+<div class="grupo-cuentas-linea">
+  <div class="grupo-cuenta">
+    <div class="texto2 text-sm sm:text-xs font-bold">
+      Briggitte Jannire Caceres Claussen
+    </div>
+    Cuenta BCP soles: <strong>19194955296037</strong><br>
+    CCI: <strong>00219119495529603756</strong><br>
+    Yape/Plin: <strong>998097270</strong>
+  </div>
+
+  <div class="grupo-cuenta">
+    <div class="texto2 text-sm sm:text-xs font-bold">
+      José Martin Monteverde Carrasco
+    </div>
+    Cuenta Scotiabank Dólares: <strong>2010559267</strong><br>
+    CCI: <strong>00908121201055926713</strong>
+  </div>
+</div>
 
 
